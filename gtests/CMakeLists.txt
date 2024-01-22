@@ -18,14 +18,21 @@ set(SOURCE_DIR
 
 add_executable(test_list 
 	tests_list.cpp
+	test_vector.cpp
+	test_forward_list.cpp
 	${SOURCE_DIR}/u_list.cpp
-	${SOURCE_DIR}/u_list.h
+	#${SOURCE_DIR}/u_list.h
 )
 
-target_include_directories(test_list PUBLIC ${SOURCE_DIR})
-target_link_libraries(test_list PUBLIC gtest gtest_main)
+target_include_directories(test_list PRIVATE ${SOURCE_DIR})
+target_link_libraries(test_list PRIVATE gtest gtest_main)
+target_link_libraries(test_list PRIVATE gmock gmock_main)
 
 set_target_properties(test_list PROPERTIES
 	CXX_STANDARD 17
 	CXX_STANDARD_REQUIRED ON
 )
+
+if(MSVC)
+	set_property(DIRECTORY ${CMAKE_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT test_list)	
+endif()

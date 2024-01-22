@@ -1,10 +1,10 @@
-#include "u_list.h"
+ï»¿#include "u_list.h"
 
 //u_list's constructor and destructor
 u_list::u_list()
-    : m_arr_size(NULL), m_start_node(nullptr), m_end_node(nullptr)
+    : m_arr_size(0), m_start_node(nullptr), m_end_node(nullptr)
 {  
-    std::cout << "\n 1. Cîçäàí îáúåêò êëàññà u_list äëÿ õðàíåíèÿ ýëåìåíòîâ òèïà int â êîíòåéíåðå òèïà «Äâóíàïðàâëåííûé ñïèñîê».";
+   // std::cout << "\n 1. CÐ¾Ð·Ð´Ð°Ð½ Ð¾Ð±ÑŠÐµÐºÑ‚ ÐºÐ»Ð°ÑÑÐ° u_list Ð´Ð»Ñ Ñ…Ñ€Ð°Ð½ÐµÐ½Ð¸Ñ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð² Ñ‚Ð¸Ð¿Ð° int Ð² ÐºÐ¾Ð½Ñ‚ÐµÐ¹Ð½ÐµÑ€Ðµ Ñ‚Ð¸Ð¿Ð° Â«Ð”Ð²ÑƒÐ½Ð°Ð¿Ñ€Ð°Ð²Ð»ÐµÐ½Ð½Ñ‹Ð¹ ÑÐ¿Ð¸ÑÐ¾ÐºÂ».";
 }
 
 u_list::u_list(u_list&& rhs) noexcept
@@ -14,9 +14,9 @@ u_list::u_list(u_list&& rhs) noexcept
     m_arr_size = rhs.m_arr_size;
 
     rhs.m_start_node = rhs.m_end_node = nullptr;
-    rhs.m_arr_size = NULL;
+    rhs.m_arr_size = 0;
 
-    std::cout << "\n 1. Âûçâàí êîíñòðóêòîð ïåðåìåùåíèÿ u_list(u_list&& rhs)";
+    std::cout << "\n 1. Ð’Ñ‹Ð·Ð²Ð°Ð½ ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ Ð¿ÐµÑ€ÐµÐ¼ÐµÑ‰ÐµÐ½Ð¸Ñ u_list(u_list&& rhs)";
 }
 
 u_list& u_list::operator=(u_list&& rhs) noexcept
@@ -29,9 +29,9 @@ u_list& u_list::operator=(u_list&& rhs) noexcept
     m_arr_size = rhs.m_arr_size;
 
     rhs.m_start_node = rhs.m_end_node = nullptr;
-    rhs.m_arr_size = NULL;
+    rhs.m_arr_size = 0;
 
-    std::cout << "\n 2. Âûçâàí îïåðàòîð ïðèñâàèâàíèÿ ïåðåìåùåíèåì operator=(u_list&& rhs)";
+    std::cout << "\n 2. Ð’Ñ‹Ð·Ð²Ð°Ð½ Ð¾Ð¿ÐµÑ€Ð°Ñ‚Ð¾Ñ€ Ð¿Ñ€Ð¸ÑÐ²Ð°Ð¸Ð²Ð°Ð½Ð¸Ñ Ð¿ÐµÑ€ÐµÐ¼ÐµÑ‰ÐµÐ½Ð¸ÐµÐ¼ operator=(u_list&& rhs)";
     return *this;
 }
 
@@ -42,7 +42,7 @@ u_list::~u_list()
 
     if (it == nullptr)
     {
-        //std::cout << "\nÂûçâàí äåñòðóêòîð ~u_list(). Ïåðâûé ýëåìåíò êîíòåéíåðà ïóñòîé èç-çà ïåðåìåùåíèÿ list â list_2 èëè list_2 â list_3.";
+        //std::cout << "\nÐ’Ñ‹Ð·Ð²Ð°Ð½ Ð´ÐµÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ ~u_list(). ÐŸÐµÑ€Ð²Ñ‹Ð¹ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚ ÐºÐ¾Ð½Ñ‚ÐµÐ¹Ð½ÐµÑ€Ð° Ð¿ÑƒÑÑ‚Ð¾Ð¹ Ð¸Ð·-Ð·Ð° Ð¿ÐµÑ€ÐµÐ¼ÐµÑ‰ÐµÐ½Ð¸Ñ list Ð² list_2 Ð¸Ð»Ð¸ list_2 Ð² list_3.";
         return;
     }
 
@@ -54,15 +54,15 @@ u_list::~u_list()
         delete it_del;
         it_del = nullptr;        
     }    
-    /*std::cout << "\nÎáúåêò list óäàë¸í äåñòðóêòîðîì ~u_list()";*/
+    /*std::cout << "\nÐžÐ±ÑŠÐµÐºÑ‚ list ÑƒÐ´Ð°Ð»Ñ‘Ð½ Ð´ÐµÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€Ð¾Ð¼ ~u_list()";*/
 }
 
 
 //Node's constructor and destructor
 u_list::Node::Node()
-    : m_data(NULL), next(nullptr), prev(nullptr)
+    : m_data(0), next(nullptr), prev(nullptr)
 {
-    //std::cout << "\n Âûçâàí êîíñòðóêòîð Node";
+    //std::cout << "\n Ð’Ñ‹Ð·Ð²Ð°Ð½ ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ Node";
 }
 
 
@@ -99,15 +99,15 @@ void u_list::erase(int pos)
     //check pos
     if (pos <= 0 || pos > m_arr_size)
     {
-        std::cout << "\nError: erase pos <= 0 OR > max";
-        exit(-1);
+        //std::cout << "\nError: erase pos <= 0 OR > max";
+        return;
     }
 
     Node* node = m_start_node;
 
     if (node == nullptr)
     {
-        std::cout << "Ïåðâûé ýëåìåíò êîíòåéíåðà ïóñòîé.";
+        std::cout << "ÐŸÐµÑ€Ð²Ñ‹Ð¹ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚ ÐºÐ¾Ð½Ñ‚ÐµÐ¹Ð½ÐµÑ€Ð° Ð¿ÑƒÑÑ‚Ð¾Ð¹.";
         return;
     }
 
@@ -118,8 +118,13 @@ void u_list::erase(int pos)
     }
 
     //Change memory address of the container[pos-1]->next and the container[pos+1]->prev.
-    node->prev->next = node->next;
-    node->next->prev = node->prev;
+    if (node->prev != nullptr) //not first
+        node->prev->next = node->next;
+    else    
+        m_start_node = node->next;    
+    
+    if (node->next != nullptr) //not lust
+        node->next->prev = node->prev;
 
     //Delete the old Node
     delete node;
@@ -132,15 +137,19 @@ void u_list::insert(const int pos, const int value)
 {
     if (pos < 1 || pos > m_arr_size)
     {
-        std::cout << "\nError. Pos <= 0 OR pos > max container's size = " << m_arr_size;
-        exit(1);
+       // std::cout << "\nError. Pos <= 0 OR pos > max container's size = " << m_arr_size;
+        return;
     }
 
     Node* old_node = m_start_node;
     Node* new_node = new Node;
     new_node->m_data = value;
    
-    if (pos == 1) //Insert in the first pos
+    /*if (m_arr_size == 0)
+    {
+        m_start_node = m_end_node = new_node;
+    }
+    else */if (pos == 1) //Insert in the first pos
     {
         old_node->prev = m_start_node = new_node;
         new_node->next = old_node;

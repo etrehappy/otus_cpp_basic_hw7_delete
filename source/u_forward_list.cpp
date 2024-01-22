@@ -96,8 +96,8 @@ void u_forward_list::erase(int pos)
     //check pos
     if (pos <= 0 || pos > m_arr_size)
     {
-        std::cout << "\nError: erase pos <= 0 OR > max";
-        exit(-1);
+        //std::cout << "\nError: erase pos <= 0 OR > max";
+        return;
     }
     Node* node = m_start_node;
     Node* node_prev = nullptr;
@@ -140,15 +140,19 @@ void u_forward_list::insert(const int pos, const int value)
 {
     if (pos < 1 || pos > m_arr_size)
     {
-        std::cout << "\nError. Pos <= 0 OR pos > max container's size = " << m_arr_size;
-        exit(1);
+        //std::cout << "\nError. Pos <= 0 OR pos > max container's size = " << m_arr_size;
+        return;
     }
 
     Node* node = m_start_node;
     Node* new_node = new Node;
     new_node->m_data = value;    
 
-    if (pos == 1) //Insert in the first pos
+    /*if (m_arr_size == 0)
+    {
+        m_start_node = m_lust_node = new_node;
+    }
+    else */if (pos == 1) //Insert in the first pos
     {
         m_start_node = new_node;
         new_node->next = node;

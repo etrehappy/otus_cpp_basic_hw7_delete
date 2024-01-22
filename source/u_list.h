@@ -23,7 +23,6 @@ public:
     friend std::ostream& operator<<(std::ostream& out, const u_list& rhs);    
 
 private:
-
     struct Node;
 
     int m_arr_size;
