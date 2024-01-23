@@ -6,7 +6,7 @@ template<typename T>
 u_vector<T>::u_vector()
     : m_arr_size(NULL), m_arr(new T[m_arr_size]), m_capacity(NULL)
 {
-    std::cout << "\n 1. Cоздан объект шаблонного класса u_vector для хранения элементов размером " << sizeof(T) << " байта в последовательном контейнере.";
+    //std::cout << "\n 1. CРѕР·РґР°РЅ РѕР±СЉРµРєС‚ С€Р°Р±Р»РѕРЅРЅРѕРіРѕ РєР»Р°СЃСЃР° u_vector РґР»СЏ С…СЂР°РЅРµРЅРёСЏ СЌР»РµРјРµРЅС‚РѕРІ СЂР°Р·РјРµСЂРѕРј " << sizeof(T) << " Р±Р°Р№С‚Р° РІ РїРѕСЃР»РµРґРѕРІР°С‚РµР»СЊРЅРѕРј РєРѕРЅС‚РµР№РЅРµСЂРµ.";
 }
 
 template<typename T>
@@ -20,7 +20,7 @@ u_vector<T>::u_vector(u_vector<T>&& rhs) noexcept
     rhs.m_arr_size = NULL;
     rhs.m_capacity = NULL;
 
-    std::cout << "\n 1. Вызван конструктор перемещения u_vector(u_vector<T>&& rhs)";
+    std::cout << "\n 1. Р’С‹Р·РІР°РЅ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРµСЂРµРјРµС‰РµРЅРёСЏ u_vector(u_vector<T>&& rhs)";
 }
 
 template<typename T>
@@ -37,7 +37,7 @@ u_vector<T>& u_vector<T>::operator=(u_vector<T>&& rhs) noexcept
     rhs.m_arr_size = NULL;
     rhs.m_capacity = NULL;
 
-    std::cout << "\n 2. Вызван оператор присваивания перемещением operator=(u_vector<T>&& rhs)";
+    std::cout << "\n 2. Р’С‹Р·РІР°РЅ РѕРїРµСЂР°С‚РѕСЂ РїСЂРёСЃРІР°РёРІР°РЅРёСЏ РїРµСЂРµРјРµС‰РµРЅРёРµРј operator=(u_vector<T>&& rhs)";
     
     return *this;
 }
@@ -46,7 +46,7 @@ template<typename T>
 u_vector<T>::~u_vector()
 {
     delete[] m_arr;
-    //std::cout << "\nОбъект удалён деструктором ~u_vector()";  
+    //std::cout << "\nРћР±СЉРµРєС‚ СѓРґР°Р»С‘РЅ РґРµСЃС‚СЂСѓРєС‚РѕСЂРѕРј ~u_vector()";  
 }
 
 
@@ -84,8 +84,8 @@ void u_vector<T>::erase(int pos)
     //check pos
     if (pos <= 0 || pos > m_arr_size)
     {
-        std::cout << "\nError: erase pos <= 0 OR > max";
-        exit(-1);
+        //std::cout << "\nError: erase pos <= 0 OR > max";
+        return;
     }
 
     //move position
@@ -102,8 +102,8 @@ void u_vector<T>::insert(const int pos, const T& value)
 {
     if (pos < 1 || pos > m_arr_size)
     {
-        std::cout << "\nError. Pos <= 0 OR pos > max container's size = " << m_arr_size;
-        exit(1);
+        //std::cout << "\nError. Pos <= 0 OR pos > max container's size = " << m_arr_size;
+        return;
     }
 
     const int new_pos = pos - 1;
@@ -239,7 +239,7 @@ bool u_vector<T>::iterator::operator!=(typename u_vector<T>::iterator& rhs)
     return  m_iterator_ptr != rhs.m_iterator_ptr;
 }
 
-//template<typename T> //вариант с ошибкой
+//template<typename T> //РІР°СЂРёР°РЅС‚ СЃ РѕС€РёР±РєРѕР№
 //bool operator!=(typename u_vector<T>::iterator& lhs, typename u_vector<T>::iterator& rhs)
 //{
 //    return lhs.m_iterator_ptr != rhs.m_iterator_ptr;

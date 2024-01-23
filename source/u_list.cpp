@@ -1,10 +1,10 @@
-﻿#include "u_list.h"
+#include "u_list.h"
 
 //u_list's constructor and destructor
 u_list::u_list()
     : m_arr_size(0), m_start_node(nullptr), m_end_node(nullptr)
-{  
-   // std::cout << "\n 1. Cоздан объект класса u_list для хранения элементов типа int в контейнере типа «Двунаправленный список».";
+{      
+    //std::cout << "\n 1. Cоздан объект класса u_list для хранения элементов типа int в контейнере типа «Двунаправленный список».";
 }
 
 u_list::u_list(u_list&& rhs) noexcept

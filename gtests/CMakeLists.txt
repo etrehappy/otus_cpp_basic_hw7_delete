@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.26)
 
-project(prj_test_list)
+project(prj_test_containers)
 
 include(FetchContent)
 FetchContent_Declare(
@@ -16,23 +16,21 @@ set(SOURCE_DIR
 	 "${CMAKE_SOURCE_DIR}/../source"
 )
 
-add_executable(test_list 
-	tests_list.cpp
-	test_vector.cpp
-	test_forward_list.cpp
+add_executable(test_containers
+	tests.cpp
 	${SOURCE_DIR}/u_list.cpp
-	#${SOURCE_DIR}/u_list.h
+	${SOURCE_DIR}/u_vector.ipp
 )
 
-target_include_directories(test_list PRIVATE ${SOURCE_DIR})
-target_link_libraries(test_list PRIVATE gtest gtest_main)
-target_link_libraries(test_list PRIVATE gmock gmock_main)
+target_include_directories(test_containers PRIVATE ${SOURCE_DIR})
+target_link_libraries(test_containers PRIVATE gtest gtest_main)
+target_link_libraries(test_containers PRIVATE gmock gmock_main)
 
-set_target_properties(test_list PROPERTIES
+set_target_properties(test_containers PROPERTIES
 	CXX_STANDARD 17
 	CXX_STANDARD_REQUIRED ON
 )
 
 if(MSVC)
-	set_property(DIRECTORY ${CMAKE_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT test_list)	
+	set_property(DIRECTORY ${CMAKE_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT test_containers)	
 endif()

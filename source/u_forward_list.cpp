@@ -5,7 +5,7 @@
 u_forward_list::u_forward_list()
     : m_arr_size(NULL), m_start_node(nullptr), m_lust_node(nullptr)
 {
-    std::cout << "\n 1. Cîçäàí îáúåêò êëàññà u_forward_list äëÿ õðàíåíèÿ ýëåìåíòîâ òèïà int â êîíòåéíåðå òèïà «Îäíîíàïðàâëåííûé ñïèñîê».";
+    //std::cout << "\n 1. CÐ¾Ð·Ð´Ð°Ð½ Ð¾Ð±ÑŠÐµÐºÑ‚ ÐºÐ»Ð°ÑÑÐ° u_forward_list Ð´Ð»Ñ Ñ…Ñ€Ð°Ð½ÐµÐ½Ð¸Ñ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð² Ñ‚Ð¸Ð¿Ð° int Ð² ÐºÐ¾Ð½Ñ‚ÐµÐ¹Ð½ÐµÑ€Ðµ Ñ‚Ð¸Ð¿Ð° Â«ÐžÐ´Ð½Ð¾Ð½Ð°Ð¿Ñ€Ð°Ð²Ð»ÐµÐ½Ð½Ñ‹Ð¹ ÑÐ¿Ð¸ÑÐ¾ÐºÂ».";
 }
 
 u_forward_list::u_forward_list(u_forward_list&& rhs) noexcept
@@ -17,7 +17,7 @@ u_forward_list::u_forward_list(u_forward_list&& rhs) noexcept
     rhs.m_start_node = rhs.m_lust_node = nullptr;
     rhs.m_arr_size = NULL;
 
-    std::cout << "\n 1. Âûçâàí êîíñòðóêòîð ïåðåìåùåíèÿ u_forward_list(u_forward_list&& rhs)";
+    std::cout << "\n 1. Ð’Ñ‹Ð·Ð²Ð°Ð½ ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ Ð¿ÐµÑ€ÐµÐ¼ÐµÑ‰ÐµÐ½Ð¸Ñ u_forward_list(u_forward_list&& rhs)";
 }
 
 u_forward_list& u_forward_list::operator=(u_forward_list&& rhs) noexcept
@@ -32,7 +32,7 @@ u_forward_list& u_forward_list::operator=(u_forward_list&& rhs) noexcept
     rhs.m_start_node = rhs.m_lust_node = nullptr;
     rhs.m_arr_size = NULL;
 
-    std::cout << "\n 2. Âûçâàí îïåðàòîð ïðèñâàèâàíèÿ ïåðåìåùåíèåì operator=(u_forward_list&& rhs)";
+    std::cout << "\n 2. Ð’Ñ‹Ð·Ð²Ð°Ð½ Ð¾Ð¿ÐµÑ€Ð°Ñ‚Ð¾Ñ€ Ð¿Ñ€Ð¸ÑÐ²Ð°Ð¸Ð²Ð°Ð½Ð¸Ñ Ð¿ÐµÑ€ÐµÐ¼ÐµÑ‰ÐµÐ½Ð¸ÐµÐ¼ operator=(u_forward_list&& rhs)";
     return *this;
 }
 
@@ -43,7 +43,7 @@ u_forward_list::~u_forward_list()
 
     if (it == nullptr)
     {
-        //std::cout << "\nÂûçâàí äåñòðóêòîð ~u_forward_list(). Ïåðâûé ýëåìåíò êîíòåéíåðà ïóñòîé èç-çà ïåðåìåùåíèÿ f_list â f_list_2 èëè f_list_2 â f_list_3.";
+        //std::cout << "\nÐ’Ñ‹Ð·Ð²Ð°Ð½ Ð´ÐµÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ ~u_forward_list(). ÐŸÐµÑ€Ð²Ñ‹Ð¹ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚ ÐºÐ¾Ð½Ñ‚ÐµÐ¹Ð½ÐµÑ€Ð° Ð¿ÑƒÑÑ‚Ð¾Ð¹ Ð¸Ð·-Ð·Ð° Ð¿ÐµÑ€ÐµÐ¼ÐµÑ‰ÐµÐ½Ð¸Ñ f_list Ð² f_list_2 Ð¸Ð»Ð¸ f_list_2 Ð² f_list_3.";
         return;
     }
 
@@ -55,7 +55,7 @@ u_forward_list::~u_forward_list()
         delete it_del;
         it_del = nullptr;
     }
-    //std::cout << "\nÎáúåêò f_list óäàë¸í äåñòðóêòîðîì ~u_list()";
+    //std::cout << "\nÐžÐ±ÑŠÐµÐºÑ‚ f_list ÑƒÐ´Ð°Ð»Ñ‘Ð½ Ð´ÐµÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€Ð¾Ð¼ ~u_list()";
 }
 
 
@@ -64,7 +64,7 @@ u_forward_list::~u_forward_list()
 u_forward_list::Node::Node()
     : m_data(NULL), next(nullptr)
 {
-    //std::cout << "\n Âûçâàí êîíñòðóêòîð Node";
+    //std::cout << "\n Ð’Ñ‹Ð·Ð²Ð°Ð½ ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ Node";
 }
 
 
@@ -104,7 +104,7 @@ void u_forward_list::erase(int pos)
 
     if (node == nullptr)
     {
-        std::cout << "Ïåðâûé ýëåìåíò êîíòåéíåðà ïóñòîé.";
+        std::cout << "ÐŸÐµÑ€Ð²Ñ‹Ð¹ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚ ÐºÐ¾Ð½Ñ‚ÐµÐ¹Ð½ÐµÑ€Ð° Ð¿ÑƒÑÑ‚Ð¾Ð¹.";
         return;
     }  
 

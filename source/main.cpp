@@ -3,13 +3,13 @@
 template<typename C>
 void print(int number, std::string name, const C& container)
 {
-    std::cout << "\n " << number << ". Ñîäåðæèìîå êîíòåéíåðà " << name << ": " << container;
+    std::cout << "\n " << number << ". Ð¡Ð¾Ð´ÐµÑ€Ð¶Ð¸Ð¼Ð¾Ðµ ÐºÐ¾Ð½Ñ‚ÐµÐ¹Ð½ÐµÑ€Ð° " << name << ": " << container;
 }
 
 template<typename C>
 void print_move(int number, std::string name, const C& container_moved)
 {
-    std::cout << "\n " << number << ". Ñîäåðæèìîå êîíòåéíåðà " << name << ": " << container_moved;
+    std::cout << "\n " << number << ". Ð¡Ð¾Ð´ÐµÑ€Ð¶Ð¸Ð¼Ð¾Ðµ ÐºÐ¾Ð½Ñ‚ÐµÐ¹Ð½ÐµÑ€Ð° " << name << ": " << container_moved;
     std::cout << "\n-----------------------------------------------\n";
 }
 
@@ -26,29 +26,29 @@ void check_u_vector(u_vector<int>& vec)
         vec.push_back(i);
     }
 
-    std::cout << "\n 2. Â êîíòåéíåð vec äîáàâëåíî " << size_vec << " ýëåìåíòîâ.";
+    std::cout << "\n 2. Ð’ ÐºÐ¾Ð½Ñ‚ÐµÐ¹Ð½ÐµÑ€ vec Ð´Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ð¾ " << size_vec << " ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð².";
     print(3, "vec", vec);
-    std::cout << "\n 4. Ðàçìåð êîíòåéíåðà: " << vec.size();
+    std::cout << "\n 4. Ð Ð°Ð·Ð¼ÐµÑ€ ÐºÐ¾Ð½Ñ‚ÐµÐ¹Ð½ÐµÑ€Ð°: " << vec.size();
 
     vec.erase(3);
     vec.erase(4);
     vec.erase(5);
 
-    std::cout << "\n 5. Èç êîíòåéíåðà óäàëåíû 3, 5 è 7 ýëåìåíòû.";
+    std::cout << "\n 5. Ð˜Ð· ÐºÐ¾Ð½Ñ‚ÐµÐ¹Ð½ÐµÑ€Ð° ÑƒÐ´Ð°Ð»ÐµÐ½Ñ‹ 3, 5 Ð¸ 7 ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ñ‹.";
     print(6, "vec", vec);
 
     vec.insert(1, 10);
 
-    std::cout << "\n 7. Äîáàâëåí ýëåìåíò 10 â íà÷àëî êîíòåéíåðà.";
+    std::cout << "\n 7. Ð”Ð¾Ð±Ð°Ð²Ð»ÐµÐ½ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚ 10 Ð² Ð½Ð°Ñ‡Ð°Ð»Ð¾ ÐºÐ¾Ð½Ñ‚ÐµÐ¹Ð½ÐµÑ€Ð°.";
     print(8, "vec", vec);
     
     vec.insert(middle_pos(vec.size()), 20);
 
-    std::cout << "\n 9. Äîáàâëåí ýëåìåíò 20 â ñåðåäèíó êîíòåéíåðà.";
+    std::cout << "\n 9. Ð”Ð¾Ð±Ð°Ð²Ð»ÐµÐ½ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚ 20 Ð² ÑÐµÑ€ÐµÐ´Ð¸Ð½Ñƒ ÐºÐ¾Ð½Ñ‚ÐµÐ¹Ð½ÐµÑ€Ð°.";
     print(10, "vec", vec);
 
     vec.push_back(30);
-    std::cout << "\n 11. Äîáàâëåí ýëåìåíò 30 â êîíåö êîíòåéíåðà.";
+    std::cout << "\n 11. Ð”Ð¾Ð±Ð°Ð²Ð»ÐµÐ½ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚ 30 Ð² ÐºÐ¾Ð½ÐµÑ† ÐºÐ¾Ð½Ñ‚ÐµÐ¹Ð½ÐµÑ€Ð°.";
     print(12, "vec", vec);
 }
 
@@ -59,26 +59,26 @@ void check_u_list(u_list& list)
     {
         list.push_back(i);
     }
-    std::cout << "\n 2. Â êîíòåéíåð list äîáàâëåíî " << size_list << " ýëåìåíòîâ.";    
+    std::cout << "\n 2. Ð’ ÐºÐ¾Ð½Ñ‚ÐµÐ¹Ð½ÐµÑ€ list Ð´Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ð¾ " << size_list << " ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð².";    
     print(3, "list", list);
-    std::cout << "\n 4. Ðàçìåð êîíòåéíåðà: " << list.size();
+    std::cout << "\n 4. Ð Ð°Ð·Ð¼ÐµÑ€ ÐºÐ¾Ð½Ñ‚ÐµÐ¹Ð½ÐµÑ€Ð°: " << list.size();
 
     list.erase(3);
     list.erase(4);
     list.erase(5);
-    std::cout << "\n 5. Èç êîíòåéíåðà óäàëåíû 3, 5 è 7 ýëåìåíòû.";
+    std::cout << "\n 5. Ð˜Ð· ÐºÐ¾Ð½Ñ‚ÐµÐ¹Ð½ÐµÑ€Ð° ÑƒÐ´Ð°Ð»ÐµÐ½Ñ‹ 3, 5 Ð¸ 7 ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ñ‹.";
     print(6, "list", list);
 
     list.insert(1, 10);
-    std::cout << "\n 7. Äîáàâëåí ýëåìåíò 10 â íà÷àëî êîíòåéíåðà.";
+    std::cout << "\n 7. Ð”Ð¾Ð±Ð°Ð²Ð»ÐµÐ½ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚ 10 Ð² Ð½Ð°Ñ‡Ð°Ð»Ð¾ ÐºÐ¾Ð½Ñ‚ÐµÐ¹Ð½ÐµÑ€Ð°.";
     print(8, "list", list);
 
     list.insert(middle_pos(list.size()), 20);
-    std::cout << "\n 9. Äîáàâëåí ýëåìåíò 20 â ñåðåäèíó êîíòåéíåðà.";
+    std::cout << "\n 9. Ð”Ð¾Ð±Ð°Ð²Ð»ÐµÐ½ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚ 20 Ð² ÑÐµÑ€ÐµÐ´Ð¸Ð½Ñƒ ÐºÐ¾Ð½Ñ‚ÐµÐ¹Ð½ÐµÑ€Ð°.";
     print(10, "list", list);
 
     list.push_back(30);
-    std::cout << "\n 11. Äîáàâëåí ýëåìåíò 30 â êîíåö êîíòåéíåðà.";
+    std::cout << "\n 11. Ð”Ð¾Ð±Ð°Ð²Ð»ÐµÐ½ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚ 30 Ð² ÐºÐ¾Ð½ÐµÑ† ÐºÐ¾Ð½Ñ‚ÐµÐ¹Ð½ÐµÑ€Ð°.";
     print(12, "list", list);
 }
 
@@ -89,32 +89,32 @@ void check_u_forward_list(u_forward_list& f_list)
     {
         f_list.push_back(i);
     }
-    std::cout << "\n 2. Â êîíòåéíåð f_list äîáàâëåíî " << size_f_list << " ýëåìåíòîâ.";
+    std::cout << "\n 2. Ð’ ÐºÐ¾Ð½Ñ‚ÐµÐ¹Ð½ÐµÑ€ f_list Ð´Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ð¾ " << size_f_list << " ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð².";
     print(3, "f_list", f_list);
-    std::cout << "\n 4. Ðàçìåð êîíòåéíåðà: " << f_list.size();
+    std::cout << "\n 4. Ð Ð°Ð·Ð¼ÐµÑ€ ÐºÐ¾Ð½Ñ‚ÐµÐ¹Ð½ÐµÑ€Ð°: " << f_list.size();
 
     f_list.erase(3);
     f_list.erase(4);
     f_list.erase(5);
-    std::cout << "\n 5. Èç êîíòåéíåðà óäàëåíû 3, 5 è 7 ýëåìåíòû.";
+    std::cout << "\n 5. Ð˜Ð· ÐºÐ¾Ð½Ñ‚ÐµÐ¹Ð½ÐµÑ€Ð° ÑƒÐ´Ð°Ð»ÐµÐ½Ñ‹ 3, 5 Ð¸ 7 ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ñ‹.";
     print(6, "f_list", f_list);
 
     f_list.insert(1, 10);
-    std::cout << "\n 7. Äîáàâëåí ýëåìåíò 10 â íà÷àëî êîíòåéíåðà.";
+    std::cout << "\n 7. Ð”Ð¾Ð±Ð°Ð²Ð»ÐµÐ½ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚ 10 Ð² Ð½Ð°Ñ‡Ð°Ð»Ð¾ ÐºÐ¾Ð½Ñ‚ÐµÐ¹Ð½ÐµÑ€Ð°.";
     print(8, "f_list", f_list);
 
     f_list.insert(middle_pos(f_list.size()), 20);
-    std::cout << "\n 9. Äîáàâëåí ýëåìåíò 20 â ñåðåäèíó êîíòåéíåðà.";
+    std::cout << "\n 9. Ð”Ð¾Ð±Ð°Ð²Ð»ÐµÐ½ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚ 20 Ð² ÑÐµÑ€ÐµÐ´Ð¸Ð½Ñƒ ÐºÐ¾Ð½Ñ‚ÐµÐ¹Ð½ÐµÑ€Ð°.";
     print(10, "f_list", f_list);
 
     f_list.push_back(30);   
-    std::cout << "\n 11. Äîáàâëåí ýëåìåíò 30 â êîíåö êîíòåéíåðà.";
+    std::cout << "\n 11. Ð”Ð¾Ð±Ð°Ð²Ð»ÐµÐ½ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚ 30 Ð² ÐºÐ¾Ð½ÐµÑ† ÐºÐ¾Ð½Ñ‚ÐµÐ¹Ð½ÐµÑ€Ð°.";
     print(12, "f_list", f_list);
 }
 
 void check_move(u_vector<int>& vec, u_list& list, u_forward_list& f_list)
 {   
-    std::cout << "\nÄîïîëíèòåëüíîå çàäàíèå 3. Èñïîëüçîâàòü â ðåàëèçàöèè ñåìàíòèêó ïåðåìåùåíèÿ\n";
+    std::cout << "\nÐ”Ð¾Ð¿Ð¾Ð»Ð½Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ð¾Ðµ Ð·Ð°Ð´Ð°Ð½Ð¸Ðµ 3. Ð˜ÑÐ¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÑŒ Ð² Ñ€ÐµÐ°Ð»Ð¸Ð·Ð°Ñ†Ð¸Ð¸ ÑÐµÐ¼Ð°Ð½Ñ‚Ð¸ÐºÑƒ Ð¿ÐµÑ€ÐµÐ¼ÐµÑ‰ÐµÐ½Ð¸Ñ\n";
 
     u_vector<int> vec_2(std::move(vec));   
     print_move(2, "vec_2", vec_2);
@@ -141,7 +141,7 @@ void check_move(u_vector<int>& vec, u_list& list, u_forward_list& f_list)
 template<typename C>
 void check_iterator(std::string name, const C& container)
 {    
-    std::cout << "\n - Ñîäåðæèìîå êîíòåéíåðà " << name << ": ";
+    std::cout << "\n - Ð¡Ð¾Ð´ÐµÑ€Ð¶Ð¸Ð¼Ð¾Ðµ ÐºÐ¾Ð½Ñ‚ÐµÐ¹Ð½ÐµÑ€Ð° " << name << ": ";
 
     auto iter = container.begin();    
     std::cout << iter.get();
@@ -169,7 +169,7 @@ int main()
     check_u_forward_list(f_list); //extra_task_2
     std::cout << "\n===============================================\n";
 
-    std::cout << "\nÄîïîëíèòåëüíîå çàäàíèå 4. Ðåàëèçîâàòü äîïîëíèòåëüíóþ ñòðóêòóðó – èòåðàòîð\n"; //extra_task_4
+    std::cout << "\nÐ”Ð¾Ð¿Ð¾Ð»Ð½Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ð¾Ðµ Ð·Ð°Ð´Ð°Ð½Ð¸Ðµ 4. Ð ÐµÐ°Ð»Ð¸Ð·Ð¾Ð²Ð°Ñ‚ÑŒ Ð´Ð¾Ð¿Ð¾Ð»Ð½Ð¸Ñ‚ÐµÐ»ÑŒÐ½ÑƒÑŽ ÑÑ‚Ñ€ÑƒÐºÑ‚ÑƒÑ€Ñƒ â€“ Ð¸Ñ‚ÐµÑ€Ð°Ñ‚Ð¾Ñ€\n"; //extra_task_4
     check_iterator("vec", vec); 
     check_iterator("list", list);
     check_iterator("f_list", f_list);

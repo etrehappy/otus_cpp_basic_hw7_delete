@@ -46,7 +46,7 @@ public:
     T& operator*();
     iterator& operator++();
     bool operator!=(iterator& rhs);
-    //friend bool operator!=(iterator& lhs, iterator& rhs); //!!! Почему в таком варианте возникает ошибка линковки? 
+    //friend bool operator!=(iterator& lhs, iterator& rhs); //!!! РџРѕС‡РµРјСѓ РІ С‚Р°РєРѕРј РІР°СЂРёР°РЅС‚Рµ РІРѕР·РЅРёРєР°РµС‚ РѕС€РёР±РєР° Р»РёРЅРєРѕРІРєРё? 
 
     T& get();
 
@@ -57,7 +57,7 @@ private:
 #include "u_vector.ipp"
 
 
-/*Текст ошибки для строки 49
+/*РўРµРєСЃС‚ РѕС€РёР±РєРё РґР»СЏ СЃС‚СЂРѕРєРё 49
 Error	LNK2019	
 unresolved external symbol  "bool __cdecl operator!=(struct u_vector<int>::iterator &,struct u_vector<int>::iterator &)" (??9@YA_NAEAUiterator@?$u_vector@H@@0@Z) 
 referenced in function      "void __cdecl check_iterator<class u_vector<int> >(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class u_vector<int> const &)" 
