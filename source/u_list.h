@@ -5,11 +5,11 @@ class u_list
 {
 public:
     u_list();
-    u_list(const u_list&) = delete;
+    u_list(const u_list&);
     u_list& operator=(const u_list&) = delete;
     u_list(u_list&& rhs) noexcept;
     u_list& operator=(u_list&& rhs) noexcept;
-    ~u_list();
+    virtual ~u_list();
 
     void push_back(int value);
     int size() const;

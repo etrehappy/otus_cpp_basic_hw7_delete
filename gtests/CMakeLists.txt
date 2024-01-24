@@ -16,21 +16,25 @@ set(SOURCE_DIR
 	 "${CMAKE_SOURCE_DIR}/../source"
 )
 
-add_executable(test_containers
-	tests.cpp
+add_executable(containers_tests
+	main_tests.cpp			tests_main.h
+	vector_tests.cpp		#vector_test.h
+	list_tests.cpp			#list_test.h
+	extra_2_destructor.cpp
+
 	${SOURCE_DIR}/u_list.cpp
 	${SOURCE_DIR}/u_vector.ipp
 )
 
-target_include_directories(test_containers PRIVATE ${SOURCE_DIR})
-target_link_libraries(test_containers PRIVATE gtest gtest_main)
-target_link_libraries(test_containers PRIVATE gmock gmock_main)
+target_include_directories(containers_tests PRIVATE ${SOURCE_DIR})
+target_link_libraries(containers_tests PRIVATE gtest gtest_main)
+target_link_libraries(containers_tests PRIVATE gmock gmock_main)
 
-set_target_properties(test_containers PROPERTIES
+set_target_properties(containers_tests PROPERTIES
 	CXX_STANDARD 17
 	CXX_STANDARD_REQUIRED ON
 )
 
 if(MSVC)
-	set_property(DIRECTORY ${CMAKE_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT test_containers)	
+	set_property(DIRECTORY ${CMAKE_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT containers_tests)	
 endif()

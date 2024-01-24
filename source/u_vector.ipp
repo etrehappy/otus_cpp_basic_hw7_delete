@@ -10,6 +10,17 @@ u_vector<T>::u_vector()
 }
 
 template<typename T>
+u_vector<T>::u_vector(const u_vector<T>& rhs)
+    : m_arr_size(rhs.m_arr_size), m_arr(new T[rhs.m_arr_size]), m_capacity(rhs.m_capacity)
+{
+    for (size_t i = 0; i < m_arr_size; i++)
+    {
+        m_arr[i] = rhs.m_arr[i];
+    }
+    //std::cout << "\nCall copy construcot u_vector(const u_vector<T>& rhs)";
+}
+
+template<typename T>
 u_vector<T>::u_vector(u_vector<T>&& rhs) noexcept
 {
     m_arr = rhs.m_arr;
@@ -37,7 +48,7 @@ u_vector<T>& u_vector<T>::operator=(u_vector<T>&& rhs) noexcept
     rhs.m_arr_size = NULL;
     rhs.m_capacity = NULL;
 
-    std::cout << "\n 2. Вызван оператор присваивания перемещением operator=(u_vector<T>&& rhs)";
+    //std::cout << "\n 2. Вызван оператор присваивания перемещением operator=(u_vector<T>&& rhs)";
     
     return *this;
 }

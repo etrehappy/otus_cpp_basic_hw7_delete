@@ -7,6 +7,51 @@ u_list::u_list()
     //std::cout << "\n 1. Cоздан объект класса u_list для хранения элементов типа int в контейнере типа «Двунаправленный список».";
 }
 
+u_list::u_list(const u_list& rhs)
+    :m_arr_size(0), m_start_node(new Node), m_end_node(nullptr)
+{
+    Node* this_it = m_start_node;
+    Node* rhs_it = rhs.m_start_node;
+    Node* new_node = nullptr;
+    
+    //copy m_start_node    
+    {
+        new_node = new Node;
+        new_node->prev = m_start_node;
+
+        m_start_node->m_data = rhs_it->m_data;
+        m_start_node->next = this_it = new_node;        
+        new_node = nullptr; //for code safety
+
+        rhs_it = rhs_it->next;
+        ++m_arr_size;
+    }
+
+    //copy m_start_node < rhs_it < m_end_node
+    while (rhs_it->next != nullptr)
+    {
+        this_it->m_data = rhs_it->m_data;
+
+        new_node = new Node;
+        new_node->prev = this_it;
+        this_it->next = new_node;
+
+        this_it = new_node;
+        new_node = nullptr; //for code safety
+        rhs_it = rhs_it->next;
+        ++m_arr_size;
+    }
+
+    //copy m_end_node    
+    {
+        m_end_node = this_it;
+        m_end_node->m_data = rhs_it->m_data;
+        ++m_arr_size;
+    }   
+
+    //std::cout << "\n 1. Вызван конструктор копирования u_list(const u_list& rhs)";
+}
+
 u_list::u_list(u_list&& rhs) noexcept
 {
     m_start_node = rhs.m_start_node;
@@ -31,7 +76,7 @@ u_list& u_list::operator=(u_list&& rhs) noexcept
     rhs.m_start_node = rhs.m_end_node = nullptr;
     rhs.m_arr_size = 0;
 
-    std::cout << "\n 2. Вызван оператор присваивания перемещением operator=(u_list&& rhs)";
+    //std::cout << "\n 2. Вызван оператор присваивания перемещением operator=(u_list&& rhs)";
     return *this;
 }
 
